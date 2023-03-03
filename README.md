@@ -12,7 +12,19 @@ Tener instalado el motor de SQL Server 2017
 
 Tener instalado SQL Server Management Studio 18 o uno compatible con en SQL Server 2017
 
-### Instalación DB Original 🔧
+### Instalación 🔧
+
+Habilitar 'Modo de autenticacion de Windows y SQL Server' de SQL Server 2017, en 'Propiedades' -> 'Seguridad'. Posteriormente reiniciar servicios
+
+Crear usuario 'OpenAPICSharp', de contraseña 'R11MQZ18Ul0d', en 'Seguridad' -> 'Inicios de sesión' -> 'Nuevo inicio de sesion'. Posteriormente, asignar permisos, para db Comic y ComicTests, en 'Asignacion de usuarios':
+
+```
+db_datareader
+db_datawriter
+public
+```
+
+#### DB Original
 
 Ejecutar script en carpeta Script\Model\ en el siguiente orden:
 
@@ -22,7 +34,6 @@ Ejecutar script en carpeta Script\Model\ en el siguiente orden:
 3.- Insert Role.sql
 4.- Insert User.sql
 ```
-
 
 Ejecutar siguiente linea de comandos en bd Comic:
 
@@ -37,7 +48,7 @@ EXEC	[dbo].[SPSelectUser]
 GO
 ```
 
-## Instalación DB Pruebas ⚙️
+#### DB Pruebas 
 
 Ejecutar script en carpeta Script\Tests\ en el siguiente orden:
 
@@ -47,7 +58,6 @@ Ejecutar script en carpeta Script\Tests\ en el siguiente orden:
 3.- Insert Role.sql
 4.- Insert User.sql
 ```
-
 
 Ejecutar siguiente linea de comandos en bd ComicTests:
 
